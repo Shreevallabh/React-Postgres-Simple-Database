@@ -44,15 +44,17 @@ fetch(request)
   response.json()
   .then(function(data) {
 
-    console.log("up");
-    console.log(data);
-    console.log("down");
-  //  if(data.code == "20000")
-    //{
-     // alert("Name doesn't exist");
-   // }
-   
 
+    //console.log(data);
+    //console.log(typeof(data));
+    if(data == 1){
+      console.log("Data Deleted");
+    }
+    if(data == 0){
+      console.log("Data doesn't exist!");
+      alert("Data doesn't exist!");
+    }
+   
 
     // let users = that.state.users;
     // //users.push(data);

@@ -72,9 +72,32 @@ app.post('/api/del-user', function(request, response) {
                  }
                  else
                  {
-                    console.log(table);
+                    if(table.rowCount == 1 )
+                     {
                      db.end();
-                     response.status(201).send({message:"Data Deleted!"});
+                     response.status(201).send("1");                     
+                     }
+                    else if(table.rowCount == 0)
+                     {
+                     db.end();
+                     response.status(201).send("0");
+                     }
+
+
+
+
+
+
+                    //  if(table.rowCount == 1 )
+                    //  {
+                    //  db.end();
+                    //  response.status(201).send({message:"Data Deleted"});                     
+                    //  }
+                    // else if(table.rowCount == 0)
+                    //  {
+                    //  db.end();
+                    //  response.status(201).send({message:"Data doesn't exist"});
+                    //  }
                  }
              })
          }
